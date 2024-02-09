@@ -9,8 +9,6 @@ def draw_boxes(boxes):
     for box in boxes:
         size_x, size_y = box[0]
         start_x, start_y = box[1]
-        # print(box[0])
-        # print(box[1])
         rect = plt.Rectangle((start_x, start_y), size_x, size_y, linewidth=2, edgecolor='r', facecolor='red', label='a')
         ax.add_patch(rect)
 
@@ -20,9 +18,7 @@ def draw_boxes(boxes):
     ax.grid(True)
     plt.show()
 
-# Example usage
 if __name__ == "__main__":
-    # Example list of box coordinates and sizes
     fp = open("1k.pck")
     boxes = []
     formatted_string = fp.readline()
@@ -40,8 +36,5 @@ if __name__ == "__main__":
         # print(formatted_string)
 
     
-
-    # Draw the boxes
     fp.close()
-    # print(boxes)
     draw_boxes(boxes)
